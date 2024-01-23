@@ -1,0 +1,25 @@
+import java.util.*;
+
+public class MissingArrayValue {
+  
+    public static void main(String[] args) {
+      int[] a = {3,0,1};
+      int result = findMissingArray(a);
+      System.out.println(result);
+    }
+    
+    public static int findMissingArray(int[] nums ){
+      
+      int actualSum = 0;
+      int n = nums.length;
+      int expectedSum = n*(n+1)/2;
+
+      for (int num : nums) {
+            actualSum = actualSum + num;
+      }
+      return expectedSum - actualSum;
+    }
+}
+
+Output:
+2
